@@ -1,0 +1,69 @@
+{namespace nipu}
+
+
+/**
+* Index page
+* @param? criteries Achievemnet criterias
+*/
+{template .add}
+
+{call .header data="all" /}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1></h1>
+
+        <h1>Время внести достижение</h1>
+
+        <p>Выберите категорию, опишите достижение, ответьте на вопросы и ваше достижение станет частью системы!</p>
+
+        <div></div>
+        <p></p>
+
+        <p></p>
+    </div>
+</div>
+<div class="container">
+    <form action="/achiev/added" method="GET">
+        <div class="form-group">
+            <label class="control-label">Введите название и описание достижения</label>
+
+            <div class="controls">
+                <input type="text" class="form-control" placeholder="Название" name="title">
+            </div>
+        </div>
+        <br/>
+        <textarea class="form-control" placeholder="Текст" name="text"></textarea>
+        <br/>
+        <select class="form-control" name="categories">
+            <option value="наука">Наука</option>
+            <option value="культура">Культура</option>
+            <option value="спорт">Спорт</option>
+            <option value="общественная деятельность">Общественная деятельность</option>
+            <option value="труд">Труд</option>
+            <option value="учеба">Учеба</option>
+        </select>
+        <br/>
+        {foreach $criteria in $criteries}
+        <br/>
+
+        <p>{$criteria.title}</p>
+        <select class="form-control" name="criteria{index($criteria)}">
+            {foreach $answer in $criteria?.answers}
+            <option value="{index($answer)+1}">{$answer?.text}</option>
+            {/foreach}
+        </select>
+        {/foreach}
+        <br/>
+
+        <div class="btn-group">
+            <button type="submit" formmethod="POST" class="btn btn-success">Внести достижение</button>
+            <button type="reset" class="btn btn-danger">Отменить</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    {call .footer/}
+
+{/template}
+

@@ -1,0 +1,28 @@
+{namespace nipu}
+
+
+/**
+* Index page
+* @param? name name
+* @param? camodels List of users
+*/
+{template .user}
+
+{call .header  data="all" /}
+
+<p>{$name}</p>
+{foreach $camodel in $camodels}
+<p>{$camodel.customer}</p>
+<p>
+<ul>
+    {foreach $achiev in $camodel.achievs}
+    <li>{$achiev}</li>
+    {/foreach}
+</ul>
+</p>
+{/foreach}
+
+{call .footer/}
+
+{/template}
+

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-soy-view-example:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="airl-1.0.0.war">
+      <element id="artifact" artifact-name="spring-soy-view-example:war exploded" />
+    </root>
+  </artifact>
+</component>

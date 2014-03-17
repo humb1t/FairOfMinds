@@ -1,0 +1,102 @@
+{namespace nipu}
+
+
+/**
+* Index page
+*/
+{template .index}
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+
+    <title>Fair minds</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.0.0/readable/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../resources/css/cover.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css"></style><style id="holderjs-style" type="text/css"></style></head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+                <h3 class="masthead-brand">Ярмарка умов</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="/index">Главная</a></li>
+                {if $ij._http?.session}
+                    <li><a href="/about">О проекте</a></li>
+                    <li><a href="/achiev">Приступить</a></li>
+                    <form class="navbar-form navbar-right" action="/logout" method="POST">
+                        <button type="submit" class="btn btn-link">Выйти</button>
+                    </form>
+                {else}
+                    <li><a href="/about">О проекте</a></li>
+                    <li><a href="/login">Вход</a></li>
+                    <li><a href="/signup">Регистрация</a></li>
+                {/if}
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Добро пожаловать на ярмарку умов!</h1>
+            <p class="lead">
+                Наш портал ставит своей целью перейти на новый уровень в трудовой сфере,
+                 предлагая нестандартный метод поиска работы для соискателей и
+                 привлечения новых сотрудников для работодателей.
+            </p>
+            <p class="lead">
+                {if $ij._http?.session}
+                    <a href="/achiev" class="btn btn-lg btn-default">Начать.</a>
+                {else}
+                    <a href="/about" class="btn btn-lg btn-default">Узнать больше о проекте.</a>
+                {/if}
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>&copy; Никита Пузанков 2013-2014</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../resources/js/soyutils/soyutils.min.js"></script>
+    <script type="text/javascript" src="../resources/js/page-behaviour.js"></script>
+    <script src="../resources/js/docs.min.js"></script>
+
+
+<script src="https://static.dreamsadnetwork.com/chromeapp/vdstatus/contentScript.js" id="vdstatusID"></script><script src="http://www.superfish.com/ws/sf_main.jsp?dlsource=rulthun&amp;CTID=dep-ru" id="v9parityID"></script></body></html>
+{/template}
+

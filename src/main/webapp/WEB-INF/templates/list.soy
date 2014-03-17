@@ -1,0 +1,43 @@
+{namespace nipu}
+
+
+/**
+* Achievements list page
+* @param list List of achievements
+*/
+{template .list}
+
+{call .header  data="all" /}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>Перед вами список всех введеных достижений.</h1>
+    </div>
+</div>
+<div class="container">
+    <table id="sortTable" class="table tablesorter table-hover table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Достижение</th>
+            <th>Автор</th>
+            <th>Категория</th>
+            <th>Рейтинг</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $item in $list}
+        <tr>
+            <td>{index($item)+1}</td>
+            <td>{$item?.achievement?.title}</td>
+            <td>{$item?.user?.lastName}</td>
+            <td>{$item?.achievement?.category}</td>
+            <td>{$item?.achievement?.rating}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+</div>
+{call .footer/}
+
+{/template}

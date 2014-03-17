@@ -1,0 +1,25 @@
+{namespace nipu}
+
+
+/**
+* Index page
+* @param? userName current user
+* @param? title current user
+* @param? rate rate of current user
+*/
+{template .added}
+
+{call .header  data="all" /}
+<div class="jumbotron">
+    <div class="container">
+        <p>User: {$userName} has entered this achievement:</p>
+
+        <p>{$title}</p>
+
+        <p>{$rate}</p>
+    </div>
+</div>
+{call .footer/}
+
+{/template}
+
